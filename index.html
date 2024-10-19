@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Supervisión de Aulas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido al Supervisor de UCT</h1>
+        
+        <h2>Monitor de Supervisión de Aulas</h2>
+
+        <div class="date-time">
+            <i class="far fa-clock"></i>
+            <span id="current-date-time"></span>
+        </div>
+
+        <div class="pabellones">
+            <div class="card">
+                <h3>Pabellón Admisión</h3>
+                <div class="piso">
+                    <h4>Piso 1</h4>
+                    <button class="btn-collapse" onclick="toggleAulas(this)">Ver Aulas</button>
+                    <div class="aulas" style="display: none;">
+                        <div class="aula" id="aula101">
+                            <h5>Aula 101 (Laboratorio)</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="aula101" value="Aula sucia"> Aula sucia</label>
+                                <label><input type="checkbox" name="aula101" value="Aula sin profesor"> Aula sin profesor</label>
+                                <label><input type="checkbox" name="aula101" value="Problemas tecnológicos"> Problemas tecnológicos</label>
+                                <label><input type="checkbox" name="aula101" value="Aula sin plumones"> Aula sin plumones</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Pabellón Santo Toribio</h3>
+                <div class="piso">
+                    <h4>Piso 1</h4>
+                    <button class="btn-collapse" onclick="toggleAulas(this)">Ver Aulas</button>
+                    <div class="aulas" style="display: none;">
+                        <div class="aula" id="aula201">
+                            <h5>Aula 201</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="aula201" value="Aula sucia"> Aula sucia</label>
+                                <label><input type="checkbox" name="aula201" value="Aula sin profesor"> Aula sin profesor</label>
+                                <label><input type="checkbox" name="aula201" value="Problemas tecnológicos"> Problemas tecnológicos</label>
+                                <label><input type="checkbox" name="aula201" value="Aula sin plumones"> Aula sin plumones</label>
+                            </div>
+                        </div>
+                        <div class="aula" id="aula202">
+                            <h5>Aula 202</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="aula202" value="Aula sucia"> Aula sucia</label>
+                                <label><input type="checkbox" name="aula202" value="Aula sin profesor"> Aula sin profesor</label>
+                                <label><input type="checkbox" name="aula202" value="Problemas tecnológicos"> Problemas tecnológicos</label>
+                                <label><input type="checkbox" name="aula202" value="Aula sin plumones"> Aula sin plumones</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Pabellón San Francisco</h3>
+                <div class="piso">
+                    <h4>Piso 1</h4>
+                    <button class="btn-collapse" onclick="toggleAulas(this)">Ver Aulas</button>
+                    <div class="aulas" style="display: none;">
+                        <div class="aula" id="aula301">
+                            <h5>Aula 301</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="aula301" value="Aula sucia"> Aula sucia</label>
+                                <label><input type="checkbox" name="aula301" value="Aula sin profesor"> Aula sin profesor</label>
+                                <label><input type="checkbox" name="aula301" value="Problemas tecnológicos"> Problemas tecnológicos</label>
+                                <label><input type="checkbox" name="aula301" value="Aula sin plumones"> Aula sin plumones</label>
+                            </div>
+                        </div>
+                        <div class="aula" id="aula302">
+                            <h5>Aula 302</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="aula302" value="Aula sucia"> Aula sucia</label>
+                                <label><input type="checkbox" name="aula302" value="Aula sin profesor"> Aula sin profesor</label>
+                                <label><input type="checkbox" name="aula302" value="Problemas tecnológicos"> Problemas tecnológicos</label>
+                                <label><input type="checkbox" name="aula302" value="Aula sin plumones"> Aula sin plumones</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumen dinámico -->
+        <div id="resumen">
+            <h3>Resumen de Problemas</h3>
+            <p id="detalle-aula">Aula: </p>
+            <p id="detalle-problemas">Problemas: </p>
+            <a id="enlace-whatsapp" href="#" target="_blank">Enviar por WhatsApp</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

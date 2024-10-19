@@ -1,0 +1,201 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(14, 22, 35, 0.89);
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    color: black;
+}
+
+h1, h2, h3, h4 {
+    color: rgba(14, 22, 35, 0.89);
+    text-align: center; /* Centrando los títulos */
+}
+
+.date-time {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(223, 192, 64, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.date-time i {
+    margin-right: 5px;
+}
+
+.pabellones {
+    margin-top: 80px; /* Espacio para la fecha y hora */
+    display: flex;
+    justify-content: space-between; /* Espacio entre tarjetas */
+    flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan en pantallas más pequeñas */
+}
+
+.card {
+    border: 1px solid rgba(14, 22, 35, 0.89);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    flex: 1 1 calc(30% - 20px); /* Ajustar el ancho de la tarjeta en pantallas grandes */
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Efecto hover en las tarjetas */
+}
+
+.piso {
+    margin-top: 15px;
+}
+
+.btn-collapse {
+    background-color: rgba(14, 22, 35, 0.89);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-collapse:hover {
+    background-color: #333;
+}
+
+.aulas {
+    margin-top: 10px;
+}
+
+.aula {
+    border: 1px solid #dfc040;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff3cd; /* Fondo ligero para el aula */
+    border-radius: 5px;
+}
+
+.aula h5 {
+    margin: 0;
+}
+
+.opciones {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap; /* Asegurar que los checkboxes se envuelvan en línea */
+}
+
+.opciones label {
+    margin-right: 10px; /* Espacio entre checkboxes */
+}
+
+#resumen {
+    background-color: #dfc040;
+    padding: 20px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    color: rgba(14, 22, 35, 0.89);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 300px; /* Ancho fijo para el resumen */
+}
+
+#resumen h3 {
+    margin-top: 0;
+}
+
+.btn-reportar {
+    background-color: rgba(14, 22, 35, 0.89);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-reportar:hover {
+    background-color: #333;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%; /* Un card por línea en móviles */
+        margin: 5px 0; /* Espacio entre tarjetas */
+    }
+
+    .date-time {
+        position: static; /* Para que se vea bien en móviles */
+        margin-bottom: 10px; /* Espacio inferior */
+    }
+
+    #resumen {
+        position: relative; /* Cambiar a relativo en móviles */
+        width: auto; /* Ancho automático en móviles */
+    }
+}
+
+#enlace-whatsapp {
+    display: inline-block; /* Permite aplicar padding y margenes */
+    background-color: rgba(14, 22, 35, 0.89); /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Centrar el texto */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones para efectos */
+}
+
+#enlace-whatsapp:hover {
+    background-color: #333; /* Color al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+
+#enlace-whatsapp:active {
+    transform: translateY(0); /* Volver a la posición original al hacer clic */
+}
+#resumen {
+    background-color: #dfc040;
+    padding: 20px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    color: rgba(14, 22, 35, 0.89);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 300px; /* Ajusta el ancho máximo */
+    width: 90%; /* Ocupa el 90% del ancho en móviles */
+    left: 50%; /* Para centrarlo horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centrarlo */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+}
+
+#resumen h3 {
+    margin-top: 0;
+}
+
+#resumen p {
+    margin: 5px 0; /* Espaciado entre párrafos */
+}
