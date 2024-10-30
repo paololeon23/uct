@@ -38,7 +38,7 @@ h1, h2, h3, h4 {
 }
 
 .pabellones {
-    margin-top: 80px; /* Espacio para la fecha y hora */
+    margin-top: 40px; /* Espacio para la fecha y hora */
     display: flex;
     justify-content: space-between; /* Espacio entre tarjetas */
     flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan en pantallas más pequeñas */
@@ -114,11 +114,15 @@ h1, h2, h3, h4 {
     display: none;
     color: rgba(14, 22, 35, 0.89);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    width: 300px; /* Ancho fijo para el resumen */
+    width: 33%; /* Ancho fijo para el resumen */
 }
 
 #resumen h3 {
     margin-top: 0;
+}
+
+#resumen p {
+    margin: 5px 0; /* Espaciado entre párrafos */
 }
 
 .btn-reportar {
@@ -144,7 +148,6 @@ h1, h2, h3, h4 {
     }
 
     .date-time {
-        position: static; /* Para que se vea bien en móviles */
         margin-bottom: 10px; /* Espacio inferior */
     }
 
@@ -175,27 +178,99 @@ h1, h2, h3, h4 {
 #enlace-whatsapp:active {
     transform: translateY(0); /* Volver a la posición original al hacer clic */
 }
-#resumen {
-    background-color: #dfc040;
-    padding: 20px;
-    border-radius: 8px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    color: rgba(14, 22, 35, 0.89);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 300px; /* Ajusta el ancho máximo */
-    width: 90%; /* Ocupa el 90% del ancho en móviles */
-    left: 50%; /* Para centrarlo horizontalmente */
-    transform: translateX(-50%); /* Ajuste para centrarlo */
-    text-align: center; /* Centrar el texto dentro del contenedor */
+
+
+/* Nuevos estilos para el resumen de aulas y problemas */
+#detalles-resumen {
+    margin-top: 10px; /* Margen superior para el contenedor de detalles */
 }
 
-#resumen h3 {
-    margin-top: 0;
+.aula-cuadro {
+    border: 2px solid #dfc040; /* Borde de color */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    margin-bottom: 10px; /* Espacio entre cuadros */
+    background-color: #f9f9f9; /* Color de fondo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    text-align: left; /* Alinear todo el texto a la izquierda */
 }
 
-#resumen p {
-    margin: 5px 0; /* Espaciado entre párrafos */
+.aula-cuadro strong {
+    display: inline; /* Mantener el título en línea */
 }
+
+.problemas {
+    margin-top: 5px; /* Margen superior para separación */
+    margin-left: 15px; /* Espacio a la izquierda */
+    font-style: italic; /* Estilo en cursiva para los problemas */
+}
+
+        /* Estilo para los cuadrados de los auxiliares */
+        .auxiliar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .auxiliar {
+            border: 2px solid #dfc040;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 300px; /* Max width for responsiveness */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .auxiliar button {
+            background-color: #dfc040;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nota {
+            border: 2px solid #dfc040;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #e8f0fe;
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .nota::before {
+            content: "\f0e8"; /* Icono de nota */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            color: #dfc040;
+            font-size: 24px;
+        }
+
+        .nota p {
+            margin: 0;
+        }
+
+
+        .imagen-bienvenida {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+        }
+        
+        .imagen-bienvenida img {
+            width: 157px; /* Ajusta el tamaño según lo necesites */
+            height: auto; /* Mantiene la proporción */
+            cursor: pointer; /* Cambia el cursor al pasar el ratón */
+        }

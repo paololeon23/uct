@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitor de Supervisión de Aulas</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Bienvenido al Supervisor de UCT</h1>
-        
+
         <h2>Monitor de Supervisión de Aulas</h2>
 
         <div class="date-time">
             <i class="far fa-clock"></i>
             <span id="current-date-time"></span>
+        </div>
+
+        <div class="auxiliar-container">
+            <div class="auxiliar">
+                <span>Paolo León: 913 420 257</span>
+                <button onclick="window.location.href='tel:913420257'">Llamar</button>
+            </div>
+            <div class="auxiliar">
+                <span>Luisito: 941 254 8741</span>
+                <button onclick="window.location.href='tel:9412548741'">Llamar</button>
+            </div>
+            <div class="auxiliar">
+                <span>Pedro: 913 464 75</span>
+                <button onclick="window.location.href='tel:91346475'">Llamar</button>
+            </div>
+        </div>
+
+        <div class="nota">
+            <p>No te olvides de llamar, tener las puertas cerradas y tener todo ordenado. ¡Estamos para apoyar!</p>
         </div>
 
         <div class="pabellones">
@@ -29,9 +51,13 @@
                             <h5>Aula 101 (Laboratorio)</h5>
                             <div class="opciones">
                                 <label><input type="checkbox" name="aula101" value="Aula sucia"> Aula sucia</label>
-                                <label><input type="checkbox" name="aula101" value="Aula sin profesor"> Aula sin profesor</label>
-                                <label><input type="checkbox" name="aula101" value="Problemas tecnológicos"> Problemas tecnológicos</label>
-                                <label><input type="checkbox" name="aula101" value="Aula sin plumones"> Aula sin plumones</label>
+                                <label><input type="checkbox" name="aula101" value="Aula sin profesor"> Aula sin
+                                    profesor</label>
+                                <label><input type="checkbox" name="aula101" value="Problemas tecnológicos"> Problemas
+                                    tecnológicos</label>
+                                <label><input type="checkbox" name="aula101" value="Aula sin plumones"> Aula sin
+                                    plumones</label>
+                                <button class="btn-collapse" style="display: none;">Resumen de Problemas</button>
                             </div>
                         </div>
                     </div>
@@ -48,18 +74,26 @@
                             <h5>Aula 201</h5>
                             <div class="opciones">
                                 <label><input type="checkbox" name="aula201" value="Aula sucia"> Aula sucia</label>
-                                <label><input type="checkbox" name="aula201" value="Aula sin profesor"> Aula sin profesor</label>
-                                <label><input type="checkbox" name="aula201" value="Problemas tecnológicos"> Problemas tecnológicos</label>
-                                <label><input type="checkbox" name="aula201" value="Aula sin plumones"> Aula sin plumones</label>
+                                <label><input type="checkbox" name="aula201" value="Aula sin profesor"> Aula sin
+                                    profesor</label>
+                                <label><input type="checkbox" name="aula201" value="Problemas tecnológicos"> Problemas
+                                    tecnológicos</label>
+                                <label><input type="checkbox" name="aula201" value="Aula sin plumones"> Aula sin
+                                    plumones</label>
+                                <button class="btn-collapse" style="display: none;">Resumen de Problemas</button>
                             </div>
                         </div>
                         <div class="aula" id="aula202">
                             <h5>Aula 202</h5>
                             <div class="opciones">
                                 <label><input type="checkbox" name="aula202" value="Aula sucia"> Aula sucia</label>
-                                <label><input type="checkbox" name="aula202" value="Aula sin profesor"> Aula sin profesor</label>
-                                <label><input type="checkbox" name="aula202" value="Problemas tecnológicos"> Problemas tecnológicos</label>
-                                <label><input type="checkbox" name="aula202" value="Aula sin plumones"> Aula sin plumones</label>
+                                <label><input type="checkbox" name="aula202" value="Aula sin profesor"> Aula sin
+                                    profesor</label>
+                                <label><input type="checkbox" name="aula202" value="Problemas tecnológicos"> Problemas
+                                    tecnológicos</label>
+                                <label><input type="checkbox" name="aula202" value="Aula sin plumones"> Aula sin
+                                    plumones</label>
+                                <button class="btn-collapse" style="display: none;">Resumen de Problemas</button>
                             </div>
                         </div>
                     </div>
@@ -70,40 +104,156 @@
                 <h3>Pabellón San Francisco</h3>
                 <div class="piso">
                     <h4>Piso 1</h4>
-                    <button class="btn-collapse" onclick="toggleAulas(this)">Ver Aulas</button>
+                    <button class="btn-collapse" onclick="toggleAulas(this)">Ver Aulas y Espacios</button>
                     <div class="aulas" style="display: none;">
-                        <div class="aula" id="aula301">
-                            <h5>Aula 301</h5>
+                        <!-- Ascensor 1 -->
+                        <div class="aula" id="ascensor1">
+                            <h5>Espacio: Ascensor 1</h5>
                             <div class="opciones">
-                                <label><input type="checkbox" name="aula301" value="Aula sucia"> Aula sucia</label>
-                                <label><input type="checkbox" name="aula301" value="Aula sin profesor"> Aula sin profesor</label>
-                                <label><input type="checkbox" name="aula301" value="Problemas tecnológicos"> Problemas tecnológicos</label>
-                                <label><input type="checkbox" name="aula301" value="Aula sin plumones"> Aula sin plumones</label>
+                                <label><input type="checkbox" name="ascensor1" value="Ascensor fallando"> Ascensor
+                                    fallando</label>
+                                <label><input type="checkbox" name="ascensor1" value="Ascensor sucio"> Ascensor
+                                    sucio</label>
                             </div>
                         </div>
-                        <div class="aula" id="aula302">
-                            <h5>Aula 302</h5>
+
+                        <!-- Laboratorio 101 -->
+                        <div class="aula" id="laboratorio101">
+                            <h5>Laboratorio 101</h5>
                             <div class="opciones">
-                                <label><input type="checkbox" name="aula302" value="Aula sucia"> Aula sucia</label>
-                                <label><input type="checkbox" name="aula302" value="Aula sin profesor"> Aula sin profesor</label>
-                                <label><input type="checkbox" name="aula302" value="Problemas tecnológicos"> Problemas tecnológicos</label>
-                                <label><input type="checkbox" name="aula302" value="Aula sin plumones"> Aula sin plumones</label>
+                                <label><input type="checkbox" name="laboratorio101" value="Aula sucia"> Aula
+                                    sucia</label>
+                                <label><input type="checkbox" name="laboratorio101" value="Aula sin profesor"> Aula sin
+                                    profesor</label>
+                                <label><input type="checkbox" name="laboratorio101" value="Problemas tecnológicos">
+                                    Problemas tecnológicos</label>
+                                <label><input type="checkbox" name="laboratorio101" value="Aula sin plumones"> Aula sin
+                                    plumones</label>
+                            </div>
+                        </div>
+
+                        <!-- Ascensor 2 -->
+                        <div class="aula" id="ascensor2">
+                            <h5>Espacio: Ascensor 2</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="ascensor2" value="Ascensor fallando"> Ascensor
+                                    fallando</label>
+                                <label><input type="checkbox" name="ascensor2" value="Ascensor sucio"> Ascensor
+                                    sucio</label>
+                            </div>
+                        </div>
+
+                        <!-- Puerta Emergencia Derecha -->
+                        <div class="aula" id="puertaEmergenciaDerecha">
+                            <h5>Espacio: Puerta Emergencia Derecha</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="puertaEmergenciaDerecha" value="Puerta no cierra">
+                                    Puerta no cierra</label>
+                                <label><input type="checkbox" name="puertaEmergenciaDerecha" value="Puerta sucia">
+                                    Puerta sucia</label>
+                            </div>
+                        </div>
+
+                        <!-- BAÑO HOMBRE + DISCAPACITADO H -->
+                        <div class="aula" id="banoHombre">
+                            <h5>Espacio: Baño Hombre + Discapacitado H</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="banoHombre" value="Baño sucio"> Baño sucio</label>
+                                <label><input type="checkbox" name="banoHombre" value="Falta jabón"> Falta jabón</label>
+                                <label><input type="checkbox" name="banoHombre" value="Falta papel"> Falta papel</label>
+                            </div>
+                        </div>
+
+                        <!-- Lista de Aulas de 108 a 101 -->
+                        <div class="aula" id="aula108">
+                            <h5>Aula 108</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="aula108" value="Aula sucia"> Aula sucia</label>
+                                <label><input type="checkbox" name="aula108" value="Aula sin profesor"> Aula sin
+                                    profesor</label>
+                                <label><input type="checkbox" name="aula108" value="Problemas tecnológicos"> Problemas
+                                    tecnológicos</label>
+                                <label><input type="checkbox" name="aula108" value="Aula sin plumones"> Aula sin
+                                    plumones</label>
+                            </div>
+                        </div>
+                        <!-- Repite el bloque anterior para aulas de 107 a 101 -->
+
+                        <!-- BAÑO MUJER + DISCAPACITADO M -->
+                        <div class="aula" id="banoMujer">
+                            <h5>Espacio: Baño Mujer + Discapacitado M</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="banoMujer" value="Baño sucio"> Baño sucio</label>
+                                <label><input type="checkbox" name="banoMujer" value="Falta jabón"> Falta jabón</label>
+                                <label><input type="checkbox" name="banoMujer" value="Falta papel"> Falta papel</label>
+                            </div>
+                        </div>
+
+                        <!-- Puerta Emergencia Izquierda -->
+                        <div class="aula" id="puertaEmergenciaIzquierda">
+                            <h5>Espacio: Puerta Emergencia Izquierda</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="puertaEmergenciaIzquierda" value="Puerta no cierra">
+                                    Puerta no cierra</label>
+                                <label><input type="checkbox" name="puertaEmergenciaIzquierda" value="Puerta sucia">
+                                    Puerta sucia</label>
+                            </div>
+                        </div>
+
+                        <!-- Puerta Control Data -->
+                        <div class="aula" id="puertaControlData">
+                            <h5>Espacio: Puerta Control Data</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="puertaControlData" value="Problema de acceso">
+                                    Problema de acceso</label>
+                                <label><input type="checkbox" name="puertaControlData" value="Puerta sucia"> Puerta
+                                    sucia</label>
+                            </div>
+                        </div>
+
+                        <!-- Espacio Especial -->
+                        <div class="aula" id="espacioEspecial">
+                            <h5>Espacio: Espacio Especial</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="espacioEspecial" value="Espacio sucio"> Espacio
+                                    sucio</label>
+                                <label><input type="checkbox" name="espacioEspecial" value="Problemas de ventilación">
+                                    Problemas de ventilación</label>
+                            </div>
+                        </div>
+
+                        <!-- Ascensor 3 -->
+                        <div class="aula" id="ascensor3">
+                            <h5>Espacio: Ascensor 3</h5>
+                            <div class="opciones">
+                                <label><input type="checkbox" name="ascensor3" value="Ascensor fallando"> Ascensor
+                                    fallando</label>
+                                <label><input type="checkbox" name="ascensor3" value="Ascensor sucio"> Ascensor
+                                    sucio</label>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-        <!-- Resumen dinámico -->
-        <div id="resumen">
-            <h3>Resumen de Problemas</h3>
-            <p id="detalle-aula">Aula: </p>
-            <p id="detalle-problemas">Problemas: </p>
-            <a id="enlace-whatsapp" href="#" target="_blank">Enviar por WhatsApp</a>
+        <div class="imagen-bienvenida" id="imagen-bienvenida">
+            <img src="/uct.png" alt="Bienvenida" />
         </div>
+
+        <div id="resumen" style="display: none;"> <!-- Inicialmente oculto -->
+            <h3>Resumen de Problemas</h3>
+            <div id="detalles-resumen"></div> <!-- Contenedor para los cuadros de resumen -->
+            <a id="enlace-whatsapp" href="#" target="_blank">Enviar por WhatsApp</a>
+            <button id="btn-limpiar" title="Limpiar resumen">
+                <i class="fas fa-trash"></i> Limpiar
+            </button>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
