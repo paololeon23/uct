@@ -251,8 +251,8 @@ h1, h2, h3, h4 {
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             position: absolute;
-            left: 15px;
-            top: 15px;
+            left: 8px;
+            top: 27px;
             color: #dfc040;
             font-size: 24px;
         }
@@ -264,7 +264,7 @@ h1, h2, h3, h4 {
 
         .imagen-bienvenida {
             position: fixed;
-            bottom: 20px;
+            bottom: -8px;
             right: 20px;
             z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
         }
